@@ -18,7 +18,7 @@ variable "VNetName" {
   type = string
 }
 
-variable "Subnetaddressprefix" {
+variable "SubnetAddressPrefix" {
   type = list
 }
 
