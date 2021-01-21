@@ -1,20 +1,18 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Subnet Module
+Simple module to create a Subnet with an NSG. You'll need to create the rules afterwards.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Required Resources:
+- a Resource Group
+- a Virtual Network (VNet)
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# Usage Example :
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+```hcl
+module "sn-test_Nate-Fr" {
+  source              = "github.com/nfrappart/azTerraSubnetWithNSG?ref=v1.0.0"
+  SubnetName          = "sn-test_Nate-Fr"
+  RgName              = module.rg-core-eu.Name #ref to an existing RG created via module named RG-Core-Fr
+  VNetName            = module.vn-hub-eu.Name #ref to an existing VNet created via module named VN-Fr 
+  SubnetAddressPrefix = "10.0.1.0/24" #CIDR lock must be part of VNet IPspace
+}
+```
