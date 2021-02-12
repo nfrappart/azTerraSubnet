@@ -1,5 +1,5 @@
 # Subnet Module
-Simple module to create a Subnet with an NSG. You'll need to create the rules afterwards.
+Simple module to create a Subnet (no NSG). 
 
 # Required Resources:
 - a Resource Group
