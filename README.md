@@ -13,6 +13,6 @@ module "sn-test_Nate-Fr" {
   SubnetName          = "sn-test_Nate-Fr"
   RgName              = module.rg-core-eu.Name #ref to an existing RG created via module named RG-Core-Fr
   VNetName            = module.vn-hub-eu.Name #ref to an existing VNet created via module named VN-Fr 
-  SubnetAddressPrefix = "10.0.1.0/24" #CIDR lock must be part of VNet IPspace
+  SubnetAddressPrefix = ["10.0.1.0/24"] #CIDR lock must be part of VNet IPspace
 }
 ```
